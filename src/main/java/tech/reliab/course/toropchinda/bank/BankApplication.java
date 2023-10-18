@@ -1,4 +1,4 @@
-package tech.reliab.course.toropchinda;
+package tech.reliab.course.toropchinda.bank;
 
 public class BankApplication {
 
