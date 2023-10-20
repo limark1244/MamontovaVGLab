@@ -8,6 +8,6 @@ import java.time.LocalDate;
 
 public interface EmployeeService extends BaseService<Employee> {
 
-    Employee createEmployee(Long id, String surname, String name, String patronymic, LocalDate dateBirth, String post, Bank bank, boolean isRemoteEmployee, BankOffice bankOffice, boolean canIssueCredit, int salary);
+    Employee createEmployee(String surname, String name, String patronymic, LocalDate dateBirth, String post, Bank bank, boolean isRemoteEmployee, BankOffice bankOffice, boolean canIssueCredit, int salary);
 
 }

@@ -6,5 +6,5 @@ import tech.reliab.course.toropchinda.bank.entity.User;
 
 public interface PaymentAccountService extends BaseService<PaymentAccount> {
 
-    PaymentAccount createPaymentAccount(Long id, User user, Bank bank, int moneyAmount);
+    PaymentAccount createPaymentAccount(User user, Bank bank, int moneyAmount);
 }

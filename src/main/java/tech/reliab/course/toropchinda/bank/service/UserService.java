@@ -7,5 +7,5 @@ import java.time.LocalDate;
 
 public interface UserService extends BaseService<User> {
 
-    User createUser(Long id, String surname, String name, String patronymic, LocalDate dateBirth, String workPlace, Bank bank);
+    User createUser(String surname, String name, String patronymic, LocalDate dateBirth, String workPlace, Bank bank);
 }

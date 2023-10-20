@@ -5,5 +5,5 @@ import tech.reliab.course.toropchinda.bank.entity.BankOffice;
 
 public interface BankOfficeService extends BaseService<BankOffice> {
 
-    BankOffice createBankOffice(Long id, String name, String address, Bank bank, boolean canApplyLoan, boolean withdrawMoney, boolean depositMoney, int rentCost, boolean isWork, boolean hasSpaceToPlaceAtm);
+    BankOffice createBankOffice(String name, String address, Bank bank, boolean canApplyLoan, boolean withdrawMoney, boolean depositMoney, int rentCost, boolean isWork, boolean hasSpaceToPlaceAtm);
 }

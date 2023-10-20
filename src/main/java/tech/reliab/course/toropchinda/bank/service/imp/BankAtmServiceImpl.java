@@ -1,30 +1,43 @@
 package tech.reliab.course.toropchinda.bank.service.imp;
 
-import tech.reliab.course.toropchinda.bank.entity.*;
+import tech.reliab.course.toropchinda.bank.entity.Bank;
+import tech.reliab.course.toropchinda.bank.entity.BankAtm;
+import tech.reliab.course.toropchinda.bank.entity.BankOffice;
+import tech.reliab.course.toropchinda.bank.entity.Employee;
+import tech.reliab.course.toropchinda.bank.entity.EntityHolder;
+import tech.reliab.course.toropchinda.bank.entity.enums.StatusEnum;
 import tech.reliab.course.toropchinda.bank.service.BankAtmService;
 
 public class BankAtmServiceImpl implements BankAtmService {
 
-    private BankAtm bankAtm;
+    private final EntityHolder entityHolder;
+
+
+    public BankAtmServiceImpl(EntityHolder entityHolder) {
+        this.entityHolder = entityHolder;
+    }
 
     @Override
-    public BankAtm createBankAtm(Long id, String name, BankOffice office, StatusEnum status, Bank bank, Employee employee, boolean withdrawMoney, boolean depositMoney, int atmServingCost) {
-        bankAtm = new BankAtm(id, name, office, status, bank, employee, withdrawMoney, depositMoney, atmServingCost);
+    public BankAtm createBankAtm(String name, BankOffice office, StatusEnum status, Bank bank, Employee employee,
+                                 boolean withdrawMoney, boolean depositMoney, int atmServingCost) {
+        var bankAtm = new BankAtm(name, office, status, bank, employee, withdrawMoney, depositMoney, atmServingCost);
+        entityHolder.setBankAtm(bankAtm);
         return bankAtm;
     }
 
     @Override
     public BankAtm getEntity() {
-        return bankAtm;
+        return entityHolder.getBankAtm();
     }
 
     @Override
     public void updateEntity(BankAtm bankAtm) {
-        this.bankAtm = bankAtm;
+        this.entityHolder.setBankAtm(bankAtm);
     }
 
     @Override
     public void deleteEntity() {
-        this.bankAtm = null;
+        entityHolder.setBankAtm(null);
     }
+
 }

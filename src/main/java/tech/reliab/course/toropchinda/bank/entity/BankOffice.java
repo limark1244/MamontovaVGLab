@@ -1,9 +1,10 @@
 package tech.reliab.course.toropchinda.bank.entity;
 
 public class BankOffice extends BaseEntity<Long> {
+    private static long idCount = 0;
 
-    public BankOffice(Long id, String name, String address, Bank bank, boolean canApplyLoan, boolean withdrawMoney, boolean depositMoney, int rentCost, boolean isWork, boolean hasSpaceToPlaceAtm) {
-        super(id);
+    public BankOffice(String name, String address, Bank bank, boolean canApplyLoan, boolean withdrawMoney, boolean depositMoney, int rentCost, boolean isWork, boolean hasSpaceToPlaceAtm) {
+        super(idCount++);
         this.name = name;
         this.address = address;
         this.isWork = isWork;
@@ -106,5 +107,25 @@ public class BankOffice extends BaseEntity<Long> {
 
     public void setRentCost(int rentCost) {
         this.rentCost = rentCost;
+    }
+
+    @Override
+    public String toString() {
+        return STR
+                . """
+                OFFICE: {
+                office id = \{ getId() }
+                name = \{ name }
+                address = \{ address }
+                is office working = \{ isWork ? "yes" : "no" }
+                has space to placee atm = \{ hasSpaceToPlaceAtm ? "yes" : "no" }
+                atm count = \{ atmCount }
+                can apply load = \{ canApplyLoan ? "yes" : "no" }
+                can withdraw money = \{ withdrawMoney ? "yes" : "no" }
+                can deposit money = \{ depositMoney ? "yes" : "no" }
+                total money = \{ totalMoney }
+                rent cost = \{ rentCost }
+                }
+                """ ;
     }
 }
